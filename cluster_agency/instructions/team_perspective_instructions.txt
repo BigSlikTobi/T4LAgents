@@ -6,10 +6,10 @@ Process:
 1. Consume the content form `state['cluster_content']`.
 2. Consume the team from `state ['team_name']`.
 2. Fully understand the structure, the nuonces and the evolution of the main context.
-3. Investive the content in context to the team, the other players in the team, the locker room dynamics and the evolution of the team and in dept analyse the situation from the teams perspective.
+3. Investigate the content in context to the team, the other players in the team, the locker room dynamics and the evolution of the team and in-depth analyze the situation from the team's perspective.
 4. Use the google seach tool to get additional information about the team. Make sure that you exclude all search results that are outside of the date range of the articles that are part of `state['cluster_content']`.
 5. Create a short headline that points from team perspective.
-6. Create an engaging and informed in dept analyis of the `state['cluster_content']` from a team perspective in third persond so that a reader understands the implications for the team.
+6. Create an engaging and informed in-depth analysis of the `state['cluster_content']` from a team perspective in third person so that a reader understands the implications for the team.
 
 Output: Provide the result as a cleaned text document in the following format:
 
