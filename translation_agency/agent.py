@@ -5,8 +5,8 @@ from google.genai import types
 from google.adk.sessions import InMemorySessionService
 from google.adk.runners import Runner
 
-from .utils import load_instruction_from_file
-from .tools import fetch_untranslated_articles_with_cluster, fetch_untranslated_articles_by_id, write_to_database, mark_article_as_translated
+from utils import load_instruction_from_file
+from tools import fetch_untranslated_articles_with_cluster, fetch_untranslated_articles_by_id, write_to_database, mark_article_as_translated
 
 import os
 from dotenv import load_dotenv
@@ -108,7 +108,7 @@ database_clean_up_agent = LlmAgent(
 # --- Loop Agent Workflow ---
 translation_agent = LoopAgent(
     name="translation_agent",
-    max_iterations=2,
+    max_iterations=10,
     sub_agents=[article_controller_agent, content_fetcher_agent, content_cleaner_agent, german_agent, database_writer_agent, database_clean_up_agent]
 )
 

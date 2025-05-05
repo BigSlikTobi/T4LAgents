@@ -19,13 +19,28 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+virtual/
+.python-version
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.pydevproject
 
 # Unit test / coverage reports
 htmlcov/
@@ -39,41 +54,31 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+pytestdebug.log
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
-
-# mypy
-.mypy_cache/
-.dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# VS Code
-.vscode/
-
-# macOS
-.DS_Store
-
-# Local env
-.env
-.venv
-env/
-venv/
-ENV/
-
-# Database
+# Logs and databases
+*.log
+*.sqlite
 *.sqlite3
 *.db
-*.sqlite
 
-# Logs
-*.log
-
-# System files
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 Desktop.ini
+
+# Project specific
+*.env
+.env.*
+!.env.example
+**/__pycache__/
+.adk/
+.litellm/
