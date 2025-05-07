@@ -84,7 +84,7 @@ The following group of agents will be used to review the content of the cluster 
 # --- Sub Agent 2.1: Player Detection ---
 player_detection_agent = LlmAgent(
     name="PlayerDetection",
-    model="gemini-2.0-flash-lite",
+    model="gemini-2.5-flash-preview-04-17",
     instruction=load_instruction_from_file("player_detection_instructions.txt"),
     tools=[google_search],
     output_key="player_name", 
@@ -102,7 +102,7 @@ player_perspective_agent = LlmAgent(
 # --- Sub Agent 2.3: Coach Detection ---
 coach_detection_agent = LlmAgent(
     name="CoachDetection",
-    model="gemini-2.0-flash-lite",
+    model="gemini-2.5-flash-preview-04-17",
     instruction=load_instruction_from_file("coach_detection_instructions.txt"),
     tools=[google_search],
     output_key="coach_name", 
@@ -120,7 +120,7 @@ coach_perspective_agent = LlmAgent(
 # --- Sub Agent 2.5: Team Detection ---
 team_detection_agent = LlmAgent(
     name="TeamDetection",
-    model="gemini-2.0-flash-lite",
+    model="gemini-2.5-flash-preview-04-17",
     instruction=load_instruction_from_file("team_detection_instructions.txt"),
     tools=[google_search],
     output_key="team_name", 
@@ -137,7 +137,7 @@ team_perspective_agent = LlmAgent(
 # --- Sub Agent 2.7: Franchise Perspective ---
 franchise_perspective_agent = LlmAgent(
     name="FranchisePerspective",
-    model="gemini-2.0-flash-lite",
+    model="gemini-2.5-flash-preview-04-17",
     instruction=load_instruction_from_file("franchise_perspective_instructions.txt"),
     tools=[google_search],
     output_key="franchise_perspective", 
@@ -154,7 +154,7 @@ Therefore the articles will be analyzed for 1 additional dynamic perspective tha
 # --- Sub Agent 3.1: Dynamic Perspective Detection ---
 first_dynamic_perspective_detection_agent = LlmAgent(
     name="firstDynamicPerspectiveDetection",
-    model="gemini-2.0-flash-lite",
+    model="gemini-2.5-flash-preview-04-17",
     instruction=load_instruction_from_file("first_dynamic_perspective_detection_instructions.txt"),
     tools=[google_search],
     output_key="dynamic_name1", 
@@ -171,7 +171,7 @@ first_dynamic_perspective_agent = LlmAgent(
 # --- Sub Agent 3.3: Dynamic Perspective ---
 second_dynamic_perspective_detection_agent = LlmAgent(
     name="secondDynamicPerspectiveDetection",
-    model="gemini-2.0-flash-lite",
+    model="gemini-2.5-flash-preview-04-17",
     instruction=load_instruction_from_file("second_dynamic_perspective_detection_instructions.txt"),
     tools=[google_search],
     output_key="dynamic_name2", 
