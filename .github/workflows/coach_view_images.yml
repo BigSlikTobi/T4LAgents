@@ -1,0 +1,32 @@
+name: Process Coach View Images
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Run every 4 hours
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  process-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Process articles
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd image_agency
+          python main_image_service.py batch --table cluster_coach_view --limit 10
