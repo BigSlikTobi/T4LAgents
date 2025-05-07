@@ -116,7 +116,3 @@ def mark_article_as_translated(article_id: int):
     return response.data
 
 
-# if __name__ == "__main__":
-#     article_id = 128587  # Example article ID
-#     result = write_to_database(article_id, "Sample English Content", "Sample German Content", "Sample English Headline", "Sample German Headline")
-#     print(result)
