@@ -14,7 +14,7 @@ Output:
 Return the cleaned and enriched content for `state['{{CONTENT_KEY}}'] in the following format:
 
 {
-"cluster_id": "state['cluster_id]",
+"cluster_id": "state['cluster_id']",
 "headline": "headline"
 "content": "content"
 }
