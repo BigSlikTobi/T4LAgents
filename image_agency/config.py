@@ -34,7 +34,9 @@ BLACKLISTED_DOMAINS = [
     'gettyimages.com',
     'shutterstock.com', 
     'istockphoto.com',
-    'tiktok.com/',
+    'tiktok.com',
     'fanatics.com',
-    'static.nike.com'
+    'static.nike.com',
+    'c8.alamy.com',
+    'alamy.com'
 ]
