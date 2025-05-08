@@ -1,0 +1,107 @@
+name: Translate Articles
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Run every 30 minutes
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  translate-articles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      # Translate cluster_team_view articles
+      - name: Translate team view articles
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python translation_agency/translate-articles.py \
+            --source-table cluster_team_view \
+            --translations-table cluster_team_view_int \
+            --foreign-key cluster_team_view_id \
+            --language de \
+            --batch-size 3
+            
+      # Translate cluster_coach_view articles
+      - name: Translate coach view articles
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python translation_agency/translate-articles.py \
+            --source-table cluster_coach_view \
+            --translations-table cluster_coach_view_int \
+            --foreign-key cluster_coach_view_id \
+            --language de \
+            --batch-size 3
+            
+      # Translate cluster_dynamic_view articles
+      - name: Translate dynamic view articles
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python translation_agency/translate-articles.py \
+            --source-table cluster_dynamic_view \
+            --translations-table cluster_dynamic_view_int \
+            --foreign-key cluster_dynamic_view_id \
+            --language de \
+            --batch-size 3
+            
+      # Translate cluster_franchise_view articles
+      - name: Translate franchise view articles
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python translation_agency/translate-articles.py \
+            --source-table cluster_franchise_view \
+            --translations-table cluster_franchise_view_int \
+            --foreign-key cluster_franchise_view_id \
+            --language de \
+            --batch-size 3
+            
+      # Translate cluster_player_view articles
+      - name: Translate player view articles
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python translation_agency/translate-articles.py \
+            --source-table cluster_player_view \
+            --translations-table cluster_player_view_int \
+            --foreign-key cluster_player_view_id \
+            --language de \
+            --batch-size 3
+            
+      # Translate cluster_summary articles
+      - name: Translate summary articles
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python translation_agency/translate-articles.py \
+            --source-table cluster_summary \
+            --translations-table cluster_summary_int \
+            --foreign-key cluster_summary_id \
+            --language de \
+            --batch-size 3
