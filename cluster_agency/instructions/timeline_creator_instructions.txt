@@ -8,21 +8,22 @@ Process:
 3. For each entry, create a short 2–4 word statement headline that summarizes the key theme (e.g., "Rogers and the Viks" or "Ravens Kicker Drama").
 
 Output:
-Return the result as cleaned JSON in the following format:
+Return the result as cleaned JSON in exactly the following format:
 
 {
-"ClusterId": [
+"ClusterId": "",
+"timeline": [
 {
-"article_id": ["...", "..."],
-"headline": "...",
-"date": "..."
-},
-{
-"article_id": ["..."],
-"headline": "...",
-"date": "..."
+"article_id": [
+"",
+"",
+""
+],
+"headline": "",
+"date": "
 }
-]}
+]
+}
 
 Do not include any introductory or concluding text, headers, or footers.
 

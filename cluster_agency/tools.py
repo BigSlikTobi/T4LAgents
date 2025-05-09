@@ -21,11 +21,12 @@ def fetch_cluster_ids():
     url: str = os.environ.get("SUPABASE_URL")
     key: str = os.environ.get("SUPABASE_KEY")
     supabase: Client = create_client(url, key)
-    
+
+
     response = supabase.table('clusters') \
         .select('cluster_id') \
-        .eq('status', 'NEW') \
         .eq('isContent', False) \
+        .eq('status', 'NEW') \
         .order('created_at') \
         .limit(1) \
         .execute()

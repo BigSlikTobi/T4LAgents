@@ -194,7 +194,7 @@ cluster_agent = LoopAgent(
     sub_agents=[
         fetch_context_agent, 
         summary_agent,
-        #timeline_agent,
+        timeline_agent,
         player_agent,
         coach_agent,
         team_agent,
